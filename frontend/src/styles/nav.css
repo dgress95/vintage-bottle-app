@@ -1,0 +1,9 @@
+@tailwind utilities;
+
+#nav {
+  @apply bg-slate-400;
+}
+
+ul {
+  @apply flex flex-row justify-center space-x-4 text-white;
+}
