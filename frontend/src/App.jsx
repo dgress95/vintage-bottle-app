@@ -5,6 +5,7 @@ import AdminDashboard from "./Routes/AdminDashboard";
 import Collection from "./Routes/Collection";
 import Login from "./Routes/Login";
 import MapView from "./Routes/MapView";
+import CreateBottle from "./components/CreateBottle";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="/collection" element={<Collection />} />
         <Route path="/login" element={<Login />} />
         <Route path="/map" element={<MapView />} />
+        <Route path="/create-bottle" element={<CreateBottle />} />
       </Routes>
     </Router>
   );
