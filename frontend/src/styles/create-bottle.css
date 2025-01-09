@@ -1,0 +1,23 @@
+form#create-bottle {
+  @apply m-2 flex flex-col w-1/2;
+
+  .heading {
+    @apply text-xl;
+  }
+
+  label {
+    @apply m-2;
+  }
+
+  input {
+    @apply p-2 mx-2 mb-2 border border-solid border-black rounded-md;
+
+    &:focus {
+      @apply bg-yellow-50;
+    }
+  }
+
+  button {
+    @apply bg-purple-400 w-1/2 border border-solid border-black rounded-md m-4 p-2;
+  }
+}
