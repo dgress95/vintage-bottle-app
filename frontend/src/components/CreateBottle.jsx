@@ -1,7 +1,22 @@
 import React, { useState } from "react";
-import Nav from "./Nav";
 import axios from "../api/axios";
 import "../styles/create-bottle.css";
+import { Button } from "@mui/material";
+import CloudUploadIcon from "@mui/icons-material/CloudUpload";
+import AddIcon from "@mui/icons-material/Add";
+import { styled } from "@mui/material";
+
+const VisuallyHiddenInput = styled("input")({
+  clip: "rect(0 0 0 0)",
+  clipPath: "inset(50%)",
+  height: 1,
+  overflow: "hidden",
+  position: "absolute",
+  bottom: 0,
+  left: 0,
+  whiteSpace: "nowrap",
+  width: 1,
+});
 
 const CreateBottle = () => {
   const [name, setName] = useState("");
@@ -29,7 +44,6 @@ const CreateBottle = () => {
 
   return (
     <>
-      <Nav />
       <form id="create-bottle" onSubmit={handleSubmit}>
         <h2 className="heading">Add a Bottle to Your Collection</h2>
         <label htmlFor="name">Name:</label>
@@ -54,8 +68,28 @@ const CreateBottle = () => {
           onChange={(e) => setSize(e.target.value)}
         />
         <label htmlFor="file">Add a photo of the bottle:</label>
-        <input type="file" onChange={(e) => setPhoto(e.target.files[0])} />
-        <button type="submit">Add Bottle to Collection</button>
+        <Button
+          component="label"
+          role={undefined}
+          variant="contained"
+          tabIndex={-1}
+          startIcon={<CloudUploadIcon />}
+        >
+          Upload Bottle Image
+          <VisuallyHiddenInput
+            type="file"
+            onChange={(e) => setPhoto(e.target.files[0])}
+            multiple
+          />
+        </Button>
+        <Button
+          type="submit"
+          variant="contained"
+          color="primary"
+          startIcon={<AddIcon />}
+        >
+          Add Bottle to Collection
+        </Button>
       </form>
     </>
   );
