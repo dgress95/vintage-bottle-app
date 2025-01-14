@@ -1,10 +1,11 @@
 import Nav from "../components/Nav";
+import UserLogin from "../components/UserLogin";
 
 function Login() {
   return (
     <>
       <Nav />
-      <h1>Welcome to the login page</h1>
+      <UserLogin />
     </>
   );
 }

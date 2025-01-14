@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "../api/axios";
 
-const Login = () => {
+const UserLogin = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
@@ -12,7 +12,10 @@ const Login = () => {
       localStorage.setItem("token", response.data.token);
       alert("Login successful");
     } catch (error) {
-      console.error("Login failed", error.response.data.message);
+      console.error(
+        "Login failed",
+        error.response ? error.response.data : error.message
+      );
     }
   };
 
@@ -37,4 +40,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default UserLogin;

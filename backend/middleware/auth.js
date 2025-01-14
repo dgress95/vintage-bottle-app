@@ -9,7 +9,7 @@ function authenticateToken(req, res, next) {
     req.user = verified;
     next();
   } catch (error) {
-    req.status(400).json({ message: "Invalid token" });
+    res.status(400).json({ message: "Invalid token" });
   }
 }
 
