@@ -4,6 +4,8 @@ const mongoose = require("mongoose");
 const app = express();
 const milkBottleRoutes = require("./routes/milkBottleRoutes");
 const userRoutes = require("./routes/userRoutes");
+const cors = require("cors");
+app.use(cors());
 
 const PORT = 8000;
 
