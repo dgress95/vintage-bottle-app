@@ -2,8 +2,10 @@ import React, { useState } from "react";
 import axios from "../api/axios";
 import "../styles/create-bottle.css";
 import { Button } from "@mui/material";
+import { TextField } from "@mui/material";
 import CloudUploadIcon from "@mui/icons-material/CloudUpload";
 import AddIcon from "@mui/icons-material/Add";
+import { Typography } from "@mui/material";
 import { styled } from "@mui/material";
 
 const VisuallyHiddenInput = styled("input")({
@@ -45,33 +47,35 @@ const CreateBottle = () => {
   return (
     <>
       <form id="create-bottle" onSubmit={handleSubmit}>
-        <h2 className="heading">Add a Bottle to Your Collection</h2>
-        <label htmlFor="name">Name:</label>
-        <input
+        <Typography variant="h5" className="heading">
+          Add a Bottle to Your Collection
+        </Typography>
+        <TextField
           type="text"
-          placeholder="Bottle Name"
+          label="Name"
+          variant="outlined"
           value={name}
           onChange={(e) => setName(e.target.value)}
         />
-        <label htmlFor="location">Location:</label>
-        <input
+        <TextField
           type="text"
-          placeholder="Bottle Origin"
+          label="Origin"
+          variant="outlined"
           value={location}
           onChange={(e) => setLocation(e.target.value)}
         />
-        <label htmlFor="size">Size:</label>
-        <input
+        <TextField
           type="text"
-          placeholder="Bottle Size"
+          label="Size"
+          variant="outlined"
           value={size}
           onChange={(e) => setSize(e.target.value)}
         />
-        <label htmlFor="file">Add a photo of the bottle:</label>
         <Button
           component="label"
           role={undefined}
           variant="contained"
+          color="secondary"
           tabIndex={-1}
           startIcon={<CloudUploadIcon />}
         >
