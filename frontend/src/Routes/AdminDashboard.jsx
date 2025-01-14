@@ -1,10 +1,14 @@
 import Nav from "../components/Nav";
+import CreateBottle from "../components/CreateBottle";
+import "../styles/admin.css";
 
 function AdminDashboard() {
   return (
     <>
       <Nav />
-      <h1>Welcome to the Admin Dashboard</h1>
+      <div className="form-area">
+        <CreateBottle />
+      </div>
     </>
   );
 }
