@@ -33,6 +33,39 @@ const theme = createTheme({
       fontFamily: "Outfit",
       fontWeight: 200,
     },
+    h6: {
+      fontFamily: "Belanosima",
+    },
+    h5: {
+      fontFamily: "Belanosima",
+    },
+    h4: {
+      fontFamily: "Belanosima",
+    },
+    h3: {
+      fontFamily: "Belanosima",
+    },
+    h2: {
+      fontFamily: "Belanosima",
+    },
+    h1: {
+      fontFamily: "Belanosima",
+    },
+    subtitle1: {
+      fontFamily: "Belanosima",
+    },
+    subtitle2: {
+      fontFamily: "Belanosima",
+    },
+    button: {
+      fontFamily: "Belanosima",
+    },
+    caption: {
+      fontFamily: "Belanosima",
+    },
+    overline: {
+      fontFamily: "Belanosima",
+    },
   },
   shape: {
     borderRadius: 4,

@@ -1,4 +1,4 @@
-form#create-bottle {
+form.login-form {
   @apply mt-10 flex flex-col w-1/2 gap-3;
 
   .heading {

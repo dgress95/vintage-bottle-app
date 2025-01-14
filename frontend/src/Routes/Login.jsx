@@ -5,7 +5,9 @@ function Login() {
   return (
     <>
       <Nav />
-      <UserLogin />
+      <div className="form-area">
+        <UserLogin />
+      </div>
     </>
   );
 }
