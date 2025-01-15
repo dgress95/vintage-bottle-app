@@ -4,4 +4,16 @@ form#create-bottle {
   .heading {
     @apply self-center;
   }
+
+  .image-preview {
+    @apply mt-2 text-center;
+  }
+
+  .preview-image {
+    @apply max-w-full h-auto border border-solid border-[#00d9b6] p-1.5 rounded-md;
+  }
+
+  .remove-button {
+    @apply mt-4;
+  }
 }

@@ -4,6 +4,7 @@ const mongoose = require("mongoose");
 const app = express();
 const milkBottleRoutes = require("./routes/milkBottleRoutes");
 const userRoutes = require("./routes/userRoutes");
+const googlePlacesRoutes = require("./routes/googlePlacesRoutes");
 const cors = require("cors");
 app.use(cors());
 
@@ -16,6 +17,7 @@ app.use(express.json());
 app.use("/api/bottles", milkBottleRoutes);
 app.use("/uploads", express.static("uploads"));
 app.use("/api/users", userRoutes);
+app.use("/api", googlePlacesRoutes);
 
 async function connect() {
   try {

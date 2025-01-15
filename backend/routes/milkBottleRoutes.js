@@ -3,6 +3,11 @@ const router = express.Router();
 const multer = require("multer");
 const MilkBottle = require("../models/MilkBottle");
 const authenticateToken = require("../middleware/auth");
+const GOOGLE_MAPS_API_KEY = process.env.GOOGLE_MAPS_API_KEY;
+const axios = require("axios");
+const https = require("https");
+
+const httpsAgent = new https.Agent({ rejectUnauthorized: false });
 
 // Using multer for file upload
 const storage = multer.diskStorage({
@@ -23,9 +28,26 @@ router.post(
   upload.single("photo"),
   async (req, res) => {
     try {
+      const geocodeResponse = await axios.get(
+        `https://maps.googleapis.com/maps/api/geocode/json`,
+        {
+          params: {
+            address: req.body.location,
+            key: GOOGLE_MAPS_API_KEY,
+          },
+          httpsAgent,
+        }
+      );
+
+      console.log("Google Maps API Key:", process.env.GOOGLE_MAPS_API_KEY);
+
+      const { lat, lng } = geocodeResponse.data.results[0].geometry.location;
+
       const newBottle = new MilkBottle({
         name: req.body.name,
         location: req.body.location,
+        latitude: lat,
+        longitude: lng,
         size: req.body.size,
         photo: req.file ? req.file.path : null,
       });
