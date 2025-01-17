@@ -129,6 +129,23 @@ const CreateBottle = () => {
               fullWidth
             />
           )}
+          slotProps={{
+            popper: {
+              sx: {
+                "& .MuiAutocomplete-listbox": {
+                  backgroundColor: "#fff", // White background
+                  display: "block", // Ensure options are in a column
+                },
+                "& .MuiAutocomplete-option": {
+                  fontSize: "16px",
+                  color: "#222", // Darker text for contrast
+                  "&:hover": {
+                    backgroundColor: "#00a582", // Light blue hover
+                  },
+                },
+              },
+            },
+          }}
         />
         <TextField
           type="text"
